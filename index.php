@@ -119,6 +119,22 @@
       box-shadow: 0 20px 60px rgba(37,99,235,0.1);
     }
 
+    /* Logo header: animación al cargar */
+    @keyframes header-logo-in {
+      0% {
+        opacity: 0;
+        transform: scale(0.85) translateX(-12px);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1) translateX(0);
+      }
+    }
+    .header-logo {
+      animation: header-logo-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+      opacity: 0;
+    }
+
     /* Glass light */
     .glass {
       background: rgba(255,255,255,0.7);
@@ -146,11 +162,26 @@
       visibility: hidden;
       pointer-events: none;
     }
+    @keyframes logo-enter {
+      0% {
+        opacity: 0;
+        transform: scale(0.6) translateY(-20px);
+      }
+      60% {
+        opacity: 1;
+        transform: scale(1.08) translateY(4px);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
     #splash-inicial .splash-logo {
       width: clamp(100px, 28vw, 160px);
       height: auto;
       margin-bottom: 1.5rem;
       filter: brightness(0) invert(1);
+      animation: logo-enter 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
     }
     #splash-inicial .splash-text {
       font-family: Sora, system-ui, sans-serif;
@@ -219,7 +250,7 @@
   <header class="fixed top-0 w-full z-50 glass shadow-sm">
     <div class="max-w-5xl mx-auto px-5 h-16 flex items-center justify-between">
       <a href="#" class="flex items-center gap-3">
-        <img src="logocalvario.png" alt="" class="h-12 w-auto object-contain" aria-hidden="true"/>
+        <img src="logocalvario.png" alt="" class="h-12 w-auto object-contain header-logo" aria-hidden="true"/>
         <span class="font-heading font-bold text-lg tracking-tight"><span class="text-accent">El</span> Calvario</span>
       </a>
       <nav class="hidden sm:flex items-center gap-8 text-sm text-muted">
