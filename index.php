@@ -256,6 +256,14 @@
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: #fff; }
     ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+
+    /* Lista de canciones desplegable */
+    .lista-canciones-content { grid-template-rows: 1fr; }
+    .lista-canciones-content.lista-canciones-cerrado { grid-template-rows: 0fr; }
+    .lista-canciones-chevron { transition: transform 0.2s ease; }
+    .lista-canciones-toggle.lista-canciones-cerrado .lista-canciones-chevron { transform: rotate(180deg); }
+    /* Canciones desplegables (reproductor) */
+    .cancion-item.open .cancion-audio { grid-template-rows: 1fr; }
   </style>
 </head>
 <body class="bg-bg text-ink font-body antialiased overflow-x-hidden">
@@ -277,6 +285,7 @@
       <nav class="hidden sm:flex items-center gap-8 text-sm text-muted">
         <a href="#cultos" class="hover:text-ink transition-colors">Cultos</a>
         <a href="#testimonios" class="hover:text-ink transition-colors">Testimonios</a>
+        <a href="#musica" class="hover:text-ink transition-colors">Música</a>
         <a href="#ubicacion" class="hover:text-ink transition-colors">Ubicación</a>
       </nav>
       <button type="button" class="sm:hidden p-2" aria-label="Menú">
@@ -485,11 +494,111 @@
     </div>
   </section>
 
+  <!-- ===================== MÚSICA ===================== -->
+  <section id="musica" class="py-24 px-5 bg-surface relative">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-10 reveal">
+        <span class="text-xs font-medium tracking-[0.3em] uppercase text-accent">Medios</span>
+        <h2 class="font-heading text-2xl sm:text-3xl font-bold mt-3 tracking-tight text-ink">Música</h2>
+      </div>
+
+      <!-- Radio -->
+      <div class="border-b border-ink/10 pb-4 mb-6 reveal">
+        <a href="https://emisoras.com.mx/enlace-juvenil/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 py-2 text-ink hover:text-accent transition-colors">
+          <span class="material-icons-outlined text-accent text-xl">radio</span>
+          <span class="font-heading font-medium text-sm">Radio en vivo — Enlace Juvenil</span>
+          <span class="material-icons-outlined text-muted text-lg ml-auto">open_in_new</span>
+        </a>
+      </div>
+
+      <!-- Lista de canciones (desplegable) -->
+      <div class="reveal">
+        <button type="button" class="lista-canciones-toggle w-full flex items-center justify-between gap-3 py-3 px-0 text-left border-t border-b border-ink/10 hover:bg-ink/5 transition-colors rounded-none" aria-expanded="true" aria-controls="lista-canciones-content">
+          <span class="text-xs font-medium tracking-wider text-muted uppercase">Canciones</span>
+          <span class="material-icons-outlined text-muted text-xl lista-canciones-chevron transition-transform duration-200">expand_less</span>
+        </button>
+        <div id="lista-canciones-content" class="lista-canciones-content grid transition-[grid-template-rows] duration-200">
+          <div class="overflow-hidden">
+            <div class="space-y-0 border-b border-ink/10">
+          <div class="cancion-item border-b border-ink/10">
+            <div class="flex items-center gap-3 py-4">
+              <span class="material-icons-outlined text-accent text-lg shrink-0">music_note</span>
+              <div class="flex-1 min-w-0">
+                <p class="font-medium text-ink text-sm truncate">Volvamos al inicio</p>
+                <p class="text-muted text-xs truncate">Enoc Parra</p>
+              </div>
+              <button type="button" class="cancion-play w-10 h-10 rounded-full hover:bg-accent/10 flex items-center justify-center text-accent shrink-0" aria-label="Reproducir" title="Reproducir">
+                <span class="material-icons-outlined text-2xl cancion-play-icon">play_circle</span>
+              </button>
+            </div>
+            <div class="cancion-audio grid grid-rows-[0fr] transition-[grid-template-rows] duration-200">
+              <div class="overflow-hidden">
+                <div class="px-4 pb-4">
+                  <audio class="cancion-audio-el w-full h-9" controls preload="metadata">
+                    <source src="Volvamos%20al%20inicio%20%28Espont%C3%A1neo%29%20I%20Enoc%20Parra%20%5BU1yz0FzABTQ%5D%281%29.mp3" type="audio/mpeg"/>
+                  </audio>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cancion-item border-b border-ink/10">
+            <div class="flex items-center gap-3 py-4">
+              <span class="material-icons-outlined text-accent text-lg shrink-0">music_note</span>
+              <div class="flex-1 min-w-0">
+                <p class="font-medium text-ink text-sm truncate">Tus Cuerdas de Amor</p>
+                <p class="text-muted text-xs truncate">Julio Melgar feat. Lowsan Melgar</p>
+              </div>
+              <button type="button" class="cancion-play w-10 h-10 rounded-full hover:bg-accent/10 flex items-center justify-center text-accent shrink-0" aria-label="Reproducir" title="Reproducir">
+                <span class="material-icons-outlined text-2xl cancion-play-icon">play_circle</span>
+              </button>
+            </div>
+            <div class="cancion-audio grid grid-rows-[0fr] transition-[grid-template-rows] duration-200">
+              <div class="overflow-hidden">
+                <div class="px-4 pb-4">
+                  <audio class="cancion-audio-el w-full h-9" controls preload="metadata">
+                    <source src="Julio%20Melgar%20-%20Tus%20Cuerdas%20De%20Amor%20feat.%20Lowsan%20Melgar%20-%20Versi%C3%B3n%20Extendida%20%28Lyric%20Video%20Oficial%29%20%5BUCaAVCbImHE%5D%281%29.mp3" type="audio/mpeg"/>
+                  </audio>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cancion-item border-b border-ink/10">
+            <div class="flex items-center gap-3 py-4">
+              <span class="material-icons-outlined text-accent text-lg shrink-0">music_note</span>
+              <div class="flex-1 min-w-0">
+                <p class="font-medium text-ink text-sm truncate">Lo Harás Otra Vez</p>
+                <p class="text-muted text-xs truncate">Elevation Worship</p>
+              </div>
+              <button type="button" class="cancion-play w-10 h-10 rounded-full hover:bg-accent/10 flex items-center justify-center text-accent shrink-0" aria-label="Reproducir" title="Reproducir">
+                <span class="material-icons-outlined text-2xl cancion-play-icon">play_circle</span>
+              </button>
+            </div>
+            <div class="cancion-audio grid grid-rows-[0fr] transition-[grid-template-rows] duration-200">
+              <div class="overflow-hidden">
+                <div class="px-4 pb-4">
+                  <audio class="cancion-audio-el w-full h-9" controls preload="metadata">
+                    <source src="Lo%20Har%C3%A1s%20Otra%20Vez%20%28Do%20It%20Again%29%20Spanish%20Video%20Oficial%20Con%20Letras%20Elevation%20Worship%281%29.mp3" type="audio/mpeg"/>
+                  </audio>
+                </div>
+              </div>
+            </div>
+          </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===================== FOOTER ===================== -->
   <footer class="border-t border-ink/5 py-10 pb-28 px-5 bg-bg">
     <div class="max-w-4xl mx-auto text-center">
       <p class="font-heading font-bold text-lg text-ink"><span class="text-accent">El</span> Calvario</p>
       <p class="text-muted text-xs mt-1">El precio de tu libertad</p>
+      <a href="#musica" class="inline-flex items-center gap-2 mt-4 text-accent text-sm font-medium hover:underline">
+        <span class="material-icons-outlined text-lg">music_note</span>
+        Música y videos
+      </a>
       <p class="mt-5 text-xs text-muted/60">© 2025 Iglesia El Calvario — Santa Cruz Xoxocotlán, Oaxaca</p>
     </div>
   </footer>
@@ -507,6 +616,10 @@
     <a href="#testimonios" class="flex flex-col items-center text-muted hover:text-accent transition-colors">
       <span class="material-icons-outlined text-[22px]">forum</span>
       <span class="text-[9px] mt-1 font-medium">Testimonios</span>
+    </a>
+    <a href="#musica" class="flex flex-col items-center text-muted hover:text-accent transition-colors">
+      <span class="material-icons-outlined text-[22px]">music_note</span>
+      <span class="text-[9px] mt-1 font-medium">Música</span>
     </a>
     <a href="#ubicacion" class="flex flex-col items-center text-muted hover:text-accent transition-colors">
       <span class="material-icons-outlined text-[22px]">place</span>
@@ -602,6 +715,68 @@
       var diff = touchStartX - e.changedTouches[0].clientX;
       if (Math.abs(diff) > 50) diff > 0 ? fotosNext() : fotosPrev();
     }, { passive: true });
+
+    var listaCancionesBtn = document.querySelector('.lista-canciones-toggle');
+    var listaCancionesContent = document.getElementById('lista-canciones-content');
+    if (listaCancionesBtn && listaCancionesContent) {
+      listaCancionesBtn.addEventListener('click', function () {
+        var cerrado = listaCancionesContent.classList.toggle('lista-canciones-cerrado');
+        listaCancionesBtn.classList.toggle('lista-canciones-cerrado', cerrado);
+        listaCancionesBtn.setAttribute('aria-expanded', cerrado ? 'false' : 'true');
+      });
+    }
+    function setCancionPlayIcon(item, playing) {
+      var btn = item.querySelector('.cancion-play');
+      var icon = item.querySelector('.cancion-play-icon');
+      if (!btn || !icon) return;
+      icon.textContent = playing ? 'pause_circle' : 'play_circle';
+      btn.setAttribute('aria-label', playing ? 'Pausar' : 'Reproducir');
+    }
+    var allCancionAudios = document.querySelectorAll('.cancion-audio-el');
+    document.querySelectorAll('.cancion-play').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        var item = this.closest('.cancion-item');
+        var audio = item.querySelector('.cancion-audio-el');
+        allCancionAudios.forEach(function (a) {
+          if (a !== audio) {
+            a.pause();
+            a.currentTime = 0;
+            setCancionPlayIcon(a.closest('.cancion-item'), false);
+          }
+        });
+        document.querySelectorAll('.cancion-item').forEach(function (i) { i.classList.remove('open'); });
+        item.classList.add('open');
+        if (audio.paused) {
+          audio.play();
+          setCancionPlayIcon(item, true);
+        } else {
+          audio.pause();
+          setCancionPlayIcon(item, false);
+        }
+      });
+    });
+    allCancionAudios.forEach(function (audio) {
+      audio.addEventListener('play', function () {
+        allCancionAudios.forEach(function (a) {
+          if (a !== audio) {
+            a.pause();
+            a.currentTime = 0;
+            setCancionPlayIcon(a.closest('.cancion-item'), false);
+          }
+        });
+        var item = audio.closest('.cancion-item');
+        document.querySelectorAll('.cancion-item').forEach(function (i) { i.classList.remove('open'); });
+        item.classList.add('open');
+        setCancionPlayIcon(item, true);
+      });
+      audio.addEventListener('pause', function () {
+        setCancionPlayIcon(audio.closest('.cancion-item'), false);
+      });
+      audio.addEventListener('ended', function () {
+        setCancionPlayIcon(audio.closest('.cancion-item'), false);
+      });
+    });
   </script>
 </body>
 </html>
