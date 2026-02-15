@@ -59,6 +59,27 @@
     .orb-1 { animation: float-1 8s ease-in-out infinite; }
     .orb-2 { animation: float-2 10s ease-in-out infinite; }
 
+    /* Hero: logo desenfocado de fondo */
+    .hero-bg-logo {
+      position: absolute;
+      width: min(70vw, 420px);
+      height: auto;
+      opacity: 0.06;
+      filter: blur(60px);
+      pointer-events: none;
+    }
+    .hero-bg-logo-1 {
+      top: 50%;
+      left: 50%;
+      transform: translate(-52%, -50%);
+    }
+    .hero-bg-logo-2 {
+      top: 50%;
+      left: 50%;
+      transform: translate(-48%, -50%) scale(0.85);
+      opacity: 0.04;
+    }
+
     /* Hero: efecto al cargar */
     @keyframes hero-load-in {
       from {
@@ -266,9 +287,21 @@
 
   <!-- ===================== HERO ===================== -->
   <section class="gradient-bg relative min-h-screen flex items-center justify-center text-center px-5 overflow-hidden">
+    <!-- Logo desenfocado de fondo -->
+    <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+      <img src="logocalvario.png" alt="" class="hero-bg-logo hero-bg-logo-1" aria-hidden="true"/>
+      <img src="logocalvario.png" alt="" class="hero-bg-logo hero-bg-logo-2" aria-hidden="true"/>
+    </div>
+    <!-- Diseñitos decorativos -->
+    <div class="absolute top-24 left-10 w-24 h-24 rounded-full border border-accent/10 pointer-events-none z-0"></div>
+    <div class="absolute top-1/3 right-8 w-16 h-16 rounded-full bg-accent/5 pointer-events-none z-0"></div>
+    <div class="absolute bottom-1/4 left-16 w-20 h-20 rounded-full border border-accent2/10 pointer-events-none z-0"></div>
+    <div class="absolute bottom-32 right-20 w-12 h-12 rounded-full bg-glow/10 pointer-events-none z-0"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1px] h-40 bg-gradient-to-b from-transparent via-accent/10 to-transparent pointer-events-none z-0"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-[1px] bg-gradient-to-r from-transparent via-accent/10 to-transparent pointer-events-none z-0"></div>
     <!-- Orbs -->
-    <div class="orb-1 absolute w-72 h-72 rounded-full bg-accent/10 blur-[100px] top-20 -left-20 pointer-events-none"></div>
-    <div class="orb-2 absolute w-96 h-96 rounded-full bg-glow/15 blur-[120px] bottom-10 -right-20 pointer-events-none"></div>
+    <div class="orb-1 absolute w-72 h-72 rounded-full bg-accent/10 blur-[100px] top-20 -left-20 pointer-events-none z-0"></div>
+    <div class="orb-2 absolute w-96 h-96 rounded-full bg-glow/15 blur-[120px] bottom-10 -right-20 pointer-events-none z-0"></div>
 
     <div class="relative z-10 max-w-2xl mx-auto">
       <p class="text-xs sm:text-sm font-medium tracking-[0.3em] uppercase text-accent mb-6 hero-load hero-load-1">Iglesia El Calvario</p>
