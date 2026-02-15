@@ -59,6 +59,25 @@
     .orb-1 { animation: float-1 8s ease-in-out infinite; }
     .orb-2 { animation: float-2 10s ease-in-out infinite; }
 
+    /* Hero: efecto al cargar */
+    @keyframes hero-load-in {
+      from {
+        opacity: 0;
+        transform: translateY(28px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .hero-load {
+      opacity: 0;
+      animation: hero-load-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .hero-load-1 { animation-delay: 0.15s; }
+    .hero-load-2 { animation-delay: 0.45s; }
+    .hero-load-3 { animation-delay: 0.75s; }
+
     /* Fade-in on scroll */
     .reveal {
       opacity: 0;
@@ -221,10 +240,10 @@
     <div class="orb-2 absolute w-96 h-96 rounded-full bg-glow/15 blur-[120px] bottom-10 -right-20 pointer-events-none"></div>
 
     <div class="relative z-10 max-w-2xl mx-auto">
-      <p class="text-xs sm:text-sm font-medium tracking-[0.3em] uppercase text-accent mb-6 reveal">Iglesia El Calvario</p>
-      <h1 class="font-heading text-4xl sm:text-6xl md:text-7xl font-extrabold leading-[0.95] tracking-tight text-ink reveal">
-        El precio de<br>
-        <span class="bg-gradient-to-r from-accent via-accent2 to-glow bg-clip-text text-transparent">tu libertad</span>
+      <p class="text-xs sm:text-sm font-medium tracking-[0.3em] uppercase text-accent mb-6 hero-load hero-load-1">Iglesia El Calvario</p>
+      <h1 class="font-heading text-4xl sm:text-6xl md:text-7xl font-extrabold leading-[0.95] tracking-tight text-ink">
+        <span class="hero-load hero-load-2 inline-block">El precio de</span><br>
+        <span class="bg-gradient-to-r from-accent via-accent2 to-glow bg-clip-text text-transparent hero-load hero-load-3 inline-block">tu libertad</span>
       </h1>
       <p class="mt-6 text-base sm:text-lg text-muted max-w-md mx-auto leading-relaxed reveal">
         Santa Cruz Xoxocotlán — Unidos en la fe, guiados por Dios, creciendo en su presencia.
