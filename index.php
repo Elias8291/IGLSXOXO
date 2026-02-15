@@ -583,6 +583,69 @@
               </div>
             </div>
           </div>
+          <div class="cancion-item border-b border-ink/10">
+            <div class="flex items-center gap-3 py-4">
+              <span class="material-icons-outlined text-accent text-lg shrink-0">music_note</span>
+              <div class="flex-1 min-w-0">
+                <p class="font-medium text-ink text-sm truncate">Cómo Nos Ama</p>
+                <p class="text-muted text-xs truncate">Merari de la Torre</p>
+              </div>
+              <button type="button" class="cancion-play w-10 h-10 rounded-full hover:bg-accent/10 flex items-center justify-center text-accent shrink-0" aria-label="Reproducir" title="Reproducir">
+                <span class="material-icons-outlined text-2xl cancion-play-icon">play_circle</span>
+              </button>
+            </div>
+            <div class="cancion-audio grid grid-rows-[0fr] transition-[grid-template-rows] duration-200">
+              <div class="overflow-hidden">
+                <div class="px-4 pb-4">
+                  <audio class="cancion-audio-el w-full h-9" controls preload="metadata">
+                    <source src="C%C3%B3mo%20Nos%20Ama%20%28En%20Vivo%29.mp3" type="audio/mpeg"/>
+                  </audio>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cancion-item border-b border-ink/10">
+            <div class="flex items-center gap-3 py-4">
+              <span class="material-icons-outlined text-accent text-lg shrink-0">music_note</span>
+              <div class="flex-1 min-w-0">
+                <p class="font-medium text-ink text-sm truncate">Pronto auxilio</p>
+                <p class="text-muted text-xs truncate">Alabanza</p>
+              </div>
+              <button type="button" class="cancion-play w-10 h-10 rounded-full hover:bg-accent/10 flex items-center justify-center text-accent shrink-0" aria-label="Reproducir" title="Reproducir">
+                <span class="material-icons-outlined text-2xl cancion-play-icon">play_circle</span>
+              </button>
+            </div>
+            <div class="cancion-audio grid grid-rows-[0fr] transition-[grid-template-rows] duration-200">
+              <div class="overflow-hidden">
+                <div class="px-4 pb-4">
+                  <audio class="cancion-audio-el w-full h-9" controls preload="metadata">
+                    <source src="Pronto%20auxilio.mp3" type="audio/mpeg"/>
+                  </audio>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cancion-item border-b border-ink/10">
+            <div class="flex items-center gap-3 py-4">
+              <span class="material-icons-outlined text-accent text-lg shrink-0">music_note</span>
+              <div class="flex-1 min-w-0">
+                <p class="font-medium text-ink text-sm truncate">Salmo 1</p>
+                <p class="text-muted text-xs truncate">Santificados</p>
+              </div>
+              <button type="button" class="cancion-play w-10 h-10 rounded-full hover:bg-accent/10 flex items-center justify-center text-accent shrink-0" aria-label="Reproducir" title="Reproducir">
+                <span class="material-icons-outlined text-2xl cancion-play-icon">play_circle</span>
+              </button>
+            </div>
+            <div class="cancion-audio grid grid-rows-[0fr] transition-[grid-template-rows] duration-200">
+              <div class="overflow-hidden">
+                <div class="px-4 pb-4">
+                  <audio class="cancion-audio-el w-full h-9" controls preload="metadata">
+                    <source src="Salmo%201%20Video%20Oficial%20Con%20Letras%20Santificados.mp3" type="audio/mpeg"/>
+                  </audio>
+                </div>
+              </div>
+            </div>
+          </div>
             </div>
           </div>
         </div>
